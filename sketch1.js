@@ -102,46 +102,46 @@ function draw(){
 
       //move the turtle with arrow keys...
      if (keyCode === RIGHT_ARROW && pTurtle.x < innerWidth){
-        pTurtle.x+=17;
+        pTurtle.x+=7;
         pTurtle.addImage(turtleImage2);
         pTurtle.setCollider("circle",250,0,50);
       }
       if (keyCode === LEFT_ARROW && pTurtle.x > 100){
-        pTurtle.x-=17;
+        pTurtle.x-=7;
         pTurtle.addImage(turtleImage);
         pTurtle.setCollider("circle",-250,0,50);
       }
       if (keyCode === DOWN_ARROW && pTurtle.y < innerHeight - 50){
-        pTurtle.y+=17;
+        pTurtle.y+=7;
         
       }
       if (keyCode === UP_ARROW && pTurtle.y > 100){
-        pTurtle.y-=17;
+        pTurtle.y-=7;
        
       }
 
       if(touches.length>0){
 
       this.left.mousePressed(()=>{
-        pTurtle.velocityX=-27;
+        pTurtle.velocityX=-17;
         pTurtle.velocityY=0;
         pTurtle.addImage(turtleImage);
         pTurtle.setCollider("circle",-250,0,50);
       })
     
       this.right.mousePressed(()=>{
-        pTurtle.velocityX=27;
+        pTurtle.velocityX=17;
         pTurtle.velocityY=0;
         pTurtle.addImage(turtleImage2);
         pTurtle.setCollider("circle",250,0,50);
       })
 
       this.up.mousePressed(()=>{
-        pTurtle.velocityY=-25;
+        pTurtle.velocityY=-15;
       })
       
       this.down.mousePressed(()=>{
-        pTurtle.velocityY=25;
+        pTurtle.velocityY=15;
       })
 
       touches=[]
