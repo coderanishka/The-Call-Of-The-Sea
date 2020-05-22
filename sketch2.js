@@ -1,4 +1,5 @@
 
+
 var trashR,trashL,fishR,fishL,shark;
 
 var score = 0;
@@ -37,18 +38,19 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(innerWidth - 30,innerHeight - 60);
+  createCanvas(innerWidth - 30,innerHeight - 30);
 
-  boat = createSprite(width/2+1000,height/6);
+  boat = createSprite(innerWidth/2,innerHeight/4 - 200);
   boat.addImage(boatImg);
-  boat.scale = width/1500;
-
-  hook = createSprite(2825,boat.y + 400);
+  boat.scale = innerWidth/1200;
+ // boat.debug=true
+  boat.setCollider("rectangle",0,0,90,100);
+  hook = createSprite(innerWidth/2+1000,innerHeight/2 );
   hook.addImage(hookImg);
-  hook.scale = width/10500;
-  hook.setCollider("circle",0,0,90);
+  hook.scale = innerWidth/10500;
+ // hook.debug=true
 
-  line1 = createSprite(width/2,height/4,width,5);
+  line1 = createSprite(innerWidth/2,innerHeight/4,innerWidth,5);
   line1.visible = false;
  
 // small fish
@@ -81,33 +83,34 @@ function draw(){
   background(bgImg);
   edges=createEdgeSprites();
 
-  hook.collide(edges[3]||edges[1]||edges[2]||edges[4]);
+  hook.collide(edges[3]);
+  
   hook.collide(line1);
- 
+  boat.collide(edges[1]||edges[4])
 
   drawSprites();
   
 
-  hook.x = boat.x - 550;
+  hook.x = boat.x - 150;
 
   strokeWeight(7);
-  line(hook.x,boat.y*1.6,hook.x,hook.y-25);
+  line(hook.x,boat.y,hook.x,hook.y);
 
- 
-
-  if (keyCode === DOWN_ARROW && hook.y < 2900){
-    hook.y+=10;
-  }
-
-  if (keyCode === UP_ARROW && hook.y > 650){
+  if (keyCode === UP_ARROW && hook.y <innerHeight){
     hook.y-=10;
   }
 
-  if (keyCode === RIGHT_ARROW && boat.x < 4900){
+  if (keyCode === DOWN_ARROW && hook.y >height/4 ){
+    hook.y+=10;
+  }
+
+  
+
+  if (keyCode === RIGHT_ARROW && boat.x < innerWidth){
     boat.x+=7;
   }
 
-  if (keyCode === LEFT_ARROW && boat.x > 250){
+  if (keyCode === LEFT_ARROW && boat.x <innerWidth){
     boat.x-=7;
   }
 
@@ -174,7 +177,7 @@ function explosion(fishL) {
   // hook.debug = true;
   
 
-  if(score === 5000 ){
+  if(score === 500 ){
     gameState = "goodEnd";
   }
   
