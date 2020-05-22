@@ -94,7 +94,7 @@ function draw(){
   hook.x = boat.x - 150;
 
   strokeWeight(7);
-  line(hook.x + 100,boat.y - 100,hook.x,hook.y);
+  line(hook.x + 10,boat.y - 10,hook.x,hook.y);
 
   if (keyCode === UP_ARROW && hook.y <innerHeight){
     hook.y-=10;
@@ -117,22 +117,22 @@ function draw(){
   if(touches.length>0){
 
     this.left.mousePressed(()=>{
-      boat.velocityX = -27;
+      boat.velocityX = -7;
       hook.velocityY = 0;
     })
    
     this.right.mousePressed(()=>{
-      boat.velocityX = 27;
+      boat.velocityX = 7;
       hook.velocityY = 0;
     })
 
     this.up.mousePressed(()=>{
-      hook.velocityY = -25;
+      hook.velocityY = -5;
       boat.velocityX = 0;
     })
       
     this.down.mousePressed(()=>{
-      hook.velocityY = 25;
+      hook.velocityY = 5;
       boat.velocityX = 0;
     })
 
