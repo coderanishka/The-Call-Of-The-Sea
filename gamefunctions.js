@@ -20,7 +20,7 @@ function explosion(FishLGroup, pTurtle) {
    function spawnFishL(){
         if (frameCount%150===0){
           fishL = createSprite(-20,random(height));
-          fishL.velocityX = 25;
+          fishL.velocityX = 15;
           fishL.scale = 0.02;
           fishL.lifetime = 1000;
           var rand = Math.round(random(1,6));
@@ -55,7 +55,7 @@ function explosion(FishLGroup, pTurtle) {
         function spawnFishR(){
          if (frameCount%100===0){
            fishR = createSprite(width + width/4,random(height));
-           fishR.velocityX = -25;
+           fishR.velocityX = -15;
            fishR.scale = 0.2;
            fishR.lifetime = 1000;
        
@@ -98,7 +98,7 @@ function explosion(FishLGroup, pTurtle) {
         function spawnTrashL(){
          if (frameCount%60===0){
            trashL = createSprite(-10,random(height));
-           trashL.velocityX = 27;
+           trashL.velocityX = 17;
            trashL.scale = 0.1;
            trashL.lifetime = 800;
        
@@ -126,7 +126,7 @@ function explosion(FishLGroup, pTurtle) {
         function spawnTrashR(){
          if (frameCount%100===0){
            trashR = createSprite(width + width/4,random(height));
-           trashR.velocityX = -27;
+           trashR.velocityX = -17;
            trashR.scale = 0.1;
            trashR.lifetime = 800;
        
