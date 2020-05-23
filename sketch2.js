@@ -45,7 +45,7 @@ function setup(){
   boat.scale = innerWidth/1200;
  // boat.debug=true
   boat.setCollider("rectangle",0,0,90,100);
-  hook = createSprite(innerWidth/2+1000,innerHeight/2 );
+  hook = createSprite(innerWidth/2,innerHeight/4 + 100 );
   hook.addImage(hookImg);
   hook.scale = innerWidth/10500;
  // hook.debug=true
@@ -91,10 +91,10 @@ function draw(){
   drawSprites();
   
 
-  hook.x = boat.x - 150;
+  hook.x = boat.x - 350;
 
   strokeWeight(7);
-  line(hook.x,boat.y + 530,hook.x,hook.y);
+  line(hook.x,boat.y + 230,hook.x,hook.y);
 
   if (keyCode === UP_ARROW && hook.y <innerHeight){
     hook.y-=10;
