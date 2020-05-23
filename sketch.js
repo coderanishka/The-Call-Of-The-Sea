@@ -1,3 +1,6 @@
+// Please note that this game will only work properply on a computer, not on a mobile.
+// But the other link will work properly on a mobile, not on a computer.
+
 var form1;
 
 function preload(){
@@ -6,7 +9,7 @@ function preload(){
     game2Img = loadImage("game2.jpg");
 }
 function setup(){
-    createCanvas(innerWidth-60,innerHeight-60);
+    createCanvas(innerWidth-200,innerHeight-60);
     background(0,250,250);
     form1 = new Form();
     form1.display();
